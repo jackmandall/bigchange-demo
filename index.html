@@ -855,6 +855,247 @@
     }
   }
 </style>
+
+<style>
+  /* ===== VISUAL POLISH ===== */
+
+  /* Decorative backgrounds */
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -180px;
+    width: 540px;
+    height: 540px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(0,114,206,0.12), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -160px;
+    left: -120px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 70% 70%, rgba(255,184,0,0.08), transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .hero > .container { position: relative; z-index: 1; }
+
+  /* Dotted accent in features and pricing sections */
+  #features, #pricing {
+    position: relative;
+    overflow: hidden;
+  }
+  #features::before, #pricing::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    right: -80px;
+    width: 240px;
+    height: 240px;
+    background-image: radial-gradient(circle, rgba(0,114,206,0.12) 1.2px, transparent 1.6px);
+    background-size: 18px 18px;
+    opacity: 0.5;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 50%;
+    mask-image: radial-gradient(circle, black 30%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle, black 30%, transparent 70%);
+  }
+  #features > .container, #pricing > .container { position: relative; z-index: 1; }
+
+  /* Subtle moving gradient on the Lightning banner */
+  .lightning-banner {
+    background-size: 200% 200% !important;
+    animation: shimmer 12s ease infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Lightning bolt pulse on the banner icon */
+  .lightning-banner > div:first-child {
+    animation: bolt-pulse 3.5s ease-in-out infinite;
+  }
+  @keyframes bolt-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 rgba(255,255,255,0); }
+    50% { transform: scale(1.06); box-shadow: 0 0 24px rgba(255,255,255,0.18); }
+  }
+
+  /* Scroll-triggered reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+    will-change: opacity, transform;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* Enhanced card hover with subtle glow */
+  .prob-card:hover, .industry-card:hover, .lightning-card:hover, .price-card:hover, .feature-item:hover, .support-card:hover, .onb-card:hover {
+    box-shadow: 0 18px 44px rgba(0,114,206,0.12), 0 2px 6px rgba(10,34,64,0.04) !important;
+  }
+
+  /* Outcome cards subtle inner accent */
+  .outcome-num {
+    background: linear-gradient(135deg, var(--energy-blue), #5BA3DD);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* CTA section animated glow */
+  section[id="cta"] {
+    position: relative;
+    overflow: hidden;
+  }
+  section[id="cta"]::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(0,114,206,0.18) 0%, transparent 60%);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    animation: cta-glow 8s ease-in-out infinite;
+  }
+  @keyframes cta-glow {
+    0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+    50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+  }
+  section[id="cta"] > .container { position: relative; z-index: 1; }
+
+  /* Stat number counters get a tiny ramp animation */
+  .stat-counter {
+    display: inline-block;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Animated underline accent on section titles */
+  .section-title {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Subtle floating bolt decoration */
+  .bolt-deco {
+    position: absolute;
+    color: rgba(0,114,206,0.06);
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+  }
+
+  /* Feature item gets a left accent on active */
+  .feature-item.active {
+    border-left: 3px solid var(--energy-blue);
+    padding-left: 27px;
+  }
+
+  /* Outcome card numbers pop */
+  .outcome-card { position: relative; overflow: hidden; }
+  .outcome-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,114,206,0.04), transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Back-to-top has a small pulse when first appearing */
+  .back-to-top.visible { animation: btt-in 0.4s ease; }
+  @keyframes btt-in {
+    from { opacity: 0; transform: translateY(20px) scale(0.8); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+</style>
+
+<script>
+  (function() {
+    // Scroll reveal
+    var revealTargets = document.querySelectorAll('section .section-head, section .prob-card, section .outcome-card, section .industry-card, section .lightning-card, section .price-card, section .onb-card, section .feature-item, section .support-card, section .award-card, .features-split, .hero-image-wrap, .hero-rating, .lightning-banner, .field-wrapper');
+    revealTargets.forEach(function(el) { el.classList.add('reveal'); });
+
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -50px 0px', threshold: 0.08 });
+      revealTargets.forEach(function(el) { obs.observe(el); });
+    } else {
+      revealTargets.forEach(function(el) { el.classList.add('visible'); });
+    }
+
+    // Animate stat counters
+    function animateCount(el, target, suffix, duration) {
+      var start = 0;
+      var startTime = null;
+      function step(ts) {
+        if (!startTime) startTime = ts;
+        var progress = Math.min((ts - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var value = Math.floor(start + (target - start) * eased);
+        el.textContent = value.toLocaleString('en-GB') + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target.toLocaleString('en-GB') + suffix;
+      }
+      requestAnimationFrame(step);
+    }
+
+    function setupCounters() {
+      // Find the hero-stats numeric values and wrap them for animation
+      var statBlocks = document.querySelectorAll('.hero-stats > div > div:first-child');
+      statBlocks.forEach(function(el) {
+        var raw = el.textContent.trim();
+        var m = raw.match(/^(\d[\d,]*)([^\d]*)$/);
+        if (!m) return;
+        var num = parseInt(m[1].replace(/,/g, ''), 10);
+        var suffix = m[2];
+        el.dataset.target = num;
+        el.dataset.suffix = suffix;
+        el.textContent = '0' + suffix;
+      });
+
+      if ('IntersectionObserver' in window) {
+        var co = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              var el = entry.target;
+              var target = parseInt(el.dataset.target, 10);
+              var suffix = el.dataset.suffix || '';
+              animateCount(el, target, suffix, 1400);
+              co.unobserve(el);
+            }
+          });
+        }, { threshold: 0.5 });
+        statBlocks.forEach(function(el) { if (el.dataset.target) co.observe(el); });
+      }
+    }
+    setupCounters();
+  })();
+</script>
 </head>
 <body>
 
