@@ -32,7 +32,7 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  section[id] { scroll-margin-top: 80px; }
+  section[id] { scroll-margin-top: 70px; }
 
   body {
     font-family: 'Inter', sans-serif;
@@ -271,7 +271,7 @@
   .hero-image-wrap img { width: 100%; display: block; }
 
   /* SECTIONS */
-  section { padding: 112px 0; }
+  section { padding: 88px 0; }
   .section-tag {
     font-size: 13px;
     font-weight: 700;
@@ -709,7 +709,10 @@
     .field-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
     .field-badge { top: -12px !important; }
   }
-  </style>
+  
+  /* Tighter padding when section is jumped to via nav link */
+  section[id]:target { padding-top: 32px !important; }
+</style>
 
 <style>
   /* ===== MOBILE OPTIMISATIONS ===== */
@@ -899,7 +902,7 @@
   }
   .hero > .container { position: relative; z-index: 1; }
   /* Section anchors get extra scroll offset for the sticky nav */
-  section[id], div[id^="hub-"] { scroll-margin-top: 92px; }
+  section[id], div[id^="hub-"] { scroll-margin-top: 70px; }
 
   /* Lightning banner shimmer (on-brand: blue only) */
   .lightning-banner {
