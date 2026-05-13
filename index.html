@@ -737,6 +737,12 @@
     .price-grid > div[style*="padding:36px 0 20px"] { padding: 0 !important; }
   }
 
+  /* Integrations on tablet */
+  @media (max-width: 900px) {
+    .integrations-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+    .integrations-logos { grid-template-columns: repeat(3, 1fr) !important; max-width: 560px; }
+  }
+
   /* Lightning grids on tablet/mobile */
   @media (max-width: 900px) {
     .lightning-grid-4 { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
@@ -801,6 +807,12 @@
 
     /* Logos */
     .logos-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 18px !important; }
+
+    /* Integrations */
+    .integrations-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+    .integrations-logos { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+    .integration-logo { padding: 18px !important; aspect-ratio: 5/3 !important; }
+    .integration-logo img { max-width: 80% !important; max-height: 65% !important; }
 
     /* FAQ */
     details.faq-item summary { font-size: 16px !important; padding: 18px 0 !important; }
