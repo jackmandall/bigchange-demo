@@ -1,4 +1,11 @@
 <!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Bigchange Landing Page",
+  "schemaVersion": 1,
+  "description": "BigChange landing page. Single file HTML with inline SVG product mockups, FAQ accordion, ecosystem filter, and Google Appointment Scheduling booking CTA. Static content, no live connector data."
+}
+</script>
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8" />
@@ -1108,6 +1115,11 @@
 </style>
 
 <style>
+  .price-features li.excluded { color: var(--slate); opacity: 0.55; text-decoration: line-through; text-decoration-thickness: 1px; }
+  .price-features li.excluded::first-letter { color: var(--slate); }
+</style>
+
+<style>
   .price-features li {
     display: flex !important;
     align-items: flex-start;
@@ -1125,9 +1137,21 @@
   .price-features li.excluded {
     color: var(--slate);
     opacity: 0.62;
-    text-decoration: none;
   }
   .price-features li.excluded span { text-decoration: none; }
+  /* Match Back Office height to the Field box */
+  .price-grid {
+    align-items: stretch !important;
+  }
+  .price-grid > div[style*="padding:36px 0 20px"] {
+    display: flex;
+    flex-direction: column;
+  }
+  .price-grid > div[style*="padding:36px 0 20px"] > .price-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
 </style>
 </head>
 <body>
@@ -2061,7 +2085,7 @@
           <div class="price-period">per user, per month</div>
           <ul class="price-features">
             <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Hard wired vehicle tracking for mobile users</span></li>
-            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Real time fleet management solutions</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Team planning, management, scheduling and tracking</span></li>
             <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Quote and invoice creation and delivery</span></li>
             <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Worksheet, workflow and job card management</span></li>
             <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Online customer booking portal</span></li>
