@@ -1153,6 +1153,20 @@
     flex-direction: column;
   }
 </style>
+
+<style>
+  /* Green outline on hover for the 3 pricing cards only */
+  .price-card {
+    border: 2px solid transparent !important;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+  }
+  .price-card:hover {
+    border-color: var(--success) !important;
+    box-shadow: 0 18px 40px rgba(16,185,129,0.18), 0 2px 6px rgba(16,185,129,0.08) !important;
+    transform: translateY(-4px) !important;
+  }
+  .price-card:hover::before { opacity: 0 !important; }
+</style>
 </head>
 <body>
 
