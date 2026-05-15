@@ -1106,6 +1106,29 @@
     transform: translateY(-4px);
   }
 </style>
+
+<style>
+  .price-features li {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 0 !important;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.45;
+    margin-bottom: 0 !important;
+  }
+  .price-features li svg.feature-tick, .price-features li svg.feature-cross {
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .price-features li.excluded {
+    color: var(--slate);
+    opacity: 0.62;
+    text-decoration: none;
+  }
+  .price-features li.excluded span { text-decoration: none; }
+</style>
 </head>
 <body>
 
@@ -1259,7 +1282,6 @@
         <div>
           <h4>Extra jobs per field operative, every month</h4>
           <p>Smarter scheduling, optimised routes and less admin mean each engineer takes on more work without you adding headcount.</p>
-          <div class="outcome-source">BigChange customer data</div>
         </div>
       </div>
       <div class="outcome-card outcome-card-dark">
@@ -1267,7 +1289,6 @@
         <div>
           <h4>Reduction in fuel costs</h4>
           <p>Live tracking and intelligent route planning cut wasted miles. Add CANbus driver behaviour data and the savings stack up quickly.</p>
-          <div class="outcome-source">BigChange customer data</div>
         </div>
       </div>
       <div class="outcome-card outcome-card-dark">
@@ -1275,7 +1296,6 @@
         <div>
           <h4>Admin time saved per week</h4>
           <p>Digital job sheets and on site eSignatures flow straight into invoicing. Your back office stops processing paper and starts adding value.</p>
-          <div class="outcome-source">BigChange customer data</div>
         </div>
       </div>
       <div class="outcome-card outcome-card-dark">
@@ -1283,7 +1303,6 @@
         <div>
           <h4>Less travel time per week</h4>
           <p>Intelligent dispatch puts the right engineer on the nearest job. Faster invoicing means you get paid quicker, too.</p>
-          <div class="outcome-source">BigChange customer data</div>
         </div>
       </div>
     </div>
@@ -1354,7 +1373,7 @@
     <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;max-width:1240px;margin:0 auto;" class="eco-layout">
 
       <div class="eco-svg-wrap">
-        <svg viewBox="72 59 756 763" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;" role="img" aria-label="BigChange ecosystem of 14 connected areas">
+        <svg viewBox="72 59 756 763" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;" role="img" aria-label="BigChange ecosystem">
           <line x1="450.0" y1="345.0" x2="450.0" y2="188.0" stroke="#D5DCE7" stroke-width="1.5" stroke-dasharray="4,4"/>
           <line x1="496.0" y1="355.6" x2="518.8" y2="308.9" stroke="#D5DCE7" stroke-width="1.5" stroke-dasharray="4,4"/>
           <line x1="531.6" y1="383.9" x2="653.6" y2="285.1" stroke="#D5DCE7" stroke-width="1.5" stroke-dasharray="4,4"/>
@@ -1454,8 +1473,7 @@
       <h3 style="font-size:24px;margin-bottom:14px;">One platform. Every part of the job.</h3>
           <p style="color:var(--ink-soft);line-height:1.6;font-size:15px;">Every area talks to every other, every minute. Tap a tile on the wheel to see what each part of BigChange does for your business.</p>
           <div style="margin-top:28px;">
-            <div style="font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--slate);margin-bottom:12px;">Filter by area</div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
               <button class="eco-filter" data-filter="back-office">Back office</button>
               <button class="eco-filter" data-filter="mobile">Mobile workforce</button>
               <button class="eco-filter" data-filter="fleet">Fleet</button>
@@ -1911,29 +1929,21 @@
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
       </div>
       <div style="flex:1;min-width:0;">
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.85);margin-bottom:4px;">BigChange Lightning &middot; Heart and brain, in one platform</div>
         <div style="font-size:18px;font-weight:600;line-height:1.35;">The AI first operating platform for the trades.</div>
         <div style="font-size:14px;font-weight:400;line-height:1.5;color:rgba(255,255,255,0.85);margin-top:4px;">Cooper, our AI brain, learns your business from day one. Four AI agents, JustAsk conversational BI, plus two platform features built in.</div>
       </div>
     </div>
 
     <div style="max-width:1080px;margin:0 auto 56px;">
-
-      <!-- AI Agents row -->
-      <div style="display:flex;align-items:center;gap:10px;margin:0 4px 14px;">
-        <div style="width:24px;height:1px;background:var(--energy-blue);"></div>
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--energy-blue);">Four AI agents · Full time roles, on the clock from day one</div>
-      </div>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px;" class="lightning-grid lightning-grid-4">
 
-        <div class="lightning-card" style="background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;">
-          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--energy-blue);color:#fff;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;box-shadow:0 4px 12px rgba(0,114,206,0.32);white-space:nowrap;">Coming soon</div>
+        <div class="lightning-card" style="background:var(--white);border:2px solid var(--energy-blue);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:10px;position:relative;box-shadow:0 12px 28px rgba(0,114,206,0.14);">
+          <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--energy-blue);color:#fff;padding:6px 14px;border-radius:100px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;box-shadow:0 4px 12px rgba(0,114,206,0.32);white-space:nowrap;display:inline-flex;align-items:center;gap:6px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>Coming soon</div>
           <div style="display:flex;align-items:center;gap:10px;">
             <div style="width:34px;height:34px;border-radius:10px;background:var(--energy-blue-light);color:var(--energy-blue);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
             </div>
             <div>
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--energy-blue);">Training agent</div>
               <h4 style="font-size:16px;line-height:1.2;">FieldReady</h4>
             </div>
           </div>
@@ -1946,7 +1956,6 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
             </div>
             <div>
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--energy-blue);">Job prep agent</div>
               <h4 style="font-size:16px;line-height:1.2;">JobReady</h4>
             </div>
           </div>
@@ -1959,7 +1968,6 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 113 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
             </div>
             <div>
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--energy-blue);">Documentation agent</div>
               <h4 style="font-size:16px;line-height:1.2;">JobScribe</h4>
             </div>
           </div>
@@ -1972,19 +1980,12 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>
             </div>
             <div>
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--energy-blue);">Customer summary</div>
               <h4 style="font-size:16px;line-height:1.2;">JobBrief</h4>
             </div>
           </div>
           <p style="font-size:13.5px;color:var(--ink-soft);line-height:1.55;margin:0;">Generates a polished customer summary at the end of every job. What was done, what comes next. Cuts disputes 25–35%.</p>
         </div>
 
-      </div>
-
-      <!-- JustAsk hero tile + supporting platform features -->
-      <div style="display:flex;align-items:center;gap:10px;margin:0 4px 14px;">
-        <div style="width:24px;height:1px;background:var(--energy-blue);"></div>
-        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--energy-blue);">Plus · The conversational layer and built in platform features</div>
       </div>
       <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:14px;" class="lightning-grid lightning-grid-mixed">
 
@@ -1994,7 +1995,6 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
             </div>
             <div>
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.8);">Conversational BI</div>
               <h4 style="font-size:18px;line-height:1.2;color:#fff;">JustAsk</h4>
             </div>
           </div>
@@ -2008,7 +2008,6 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
             </div>
             <div>
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--energy-blue);">Communications</div>
               <h4 style="font-size:16px;line-height:1.2;">2 way messaging</h4>
             </div>
           </div>
@@ -2021,7 +2020,6 @@
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-7 8-12a8 8 0 10-16 0c0 5 8 12 8 12z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
             <div>
-              <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--energy-blue);">Tracking</div>
               <h4 style="font-size:16px;line-height:1.2;">GPS Time Tracking</h4>
             </div>
           </div>
@@ -2041,17 +2039,16 @@
         <div class="price-amount">£99.94</div>
         <div class="price-period">per user, per month</div>
         <ul class="price-features">
-          <li>✓ CRM and sales pipeline</li>
-          <li>✓ Intelligent job scheduling</li>
-          <li>✓ Live vehicle and team tracking</li>
-          <li>✓ Quoting, invoicing, financials</li>
-          <li>✓ Business intelligence dashboards</li>
+          <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>CRM and sales pipeline</span></li>
+          <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Intelligent job scheduling</span></li>
+          <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Live vehicle and team tracking</span></li>
+          <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Quoting, invoicing, financials</span></li>
+          <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Business intelligence dashboards</span></li>
         </ul>
-        <a href="https://calendar.google.com/appointments/schedules/AcZssZ0iLKEZ8Q7On8185ZRF0fKHek9lFf50ZASfZ-dCPpMrsO8fn53Nj4gKekNPZ34O0DSF-wN7nC9n" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%;justify-content:center;border:1px solid var(--line);">Talk to sales</a>
-      </div>
+            </div>
       </div>
 
-      <div class="field-wrapper" style="grid-column:span 2;position:relative;background:#FFFFFF;border:2px solid var(--energy-blue);border-radius:24px;padding:36px 20px 20px;">
+      <div class="field-wrapper" style="grid-column:span 2;position:relative;background:linear-gradient(135deg, #0A2240 0%, #163454 100%);border:2px solid var(--energy-blue);border-radius:24px;padding:36px 20px 20px;box-shadow:0 16px 40px rgba(10,34,64,0.18);">
         <div class="field-badge" style="position:absolute;top:-15px;left:50%;transform:translateX(-50%);background:var(--energy-blue);color:#fff;padding:8px 20px;border-radius:100px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;display:inline-flex;align-items:center;gap:6px;box-shadow:0 6px 18px rgba(0,114,206,0.32);z-index:2;">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg>
           Field
@@ -2063,14 +2060,19 @@
           <div class="price-amount">£99.94</div>
           <div class="price-period">per user, per month</div>
           <ul class="price-features">
-            <li>✓ Digital workflows and job sheets</li>
-            <li>✓ Photos, eSignatures, compliance</li>
-            <li>✓ Timesheets and expenses</li>
-            <li>✓ Stock management</li>
-            <li>✓ Vehicle tracking unit included</li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Hard wired vehicle tracking for mobile users</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Real time fleet management solutions</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Quote and invoice creation and delivery</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Worksheet, workflow and job card management</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Online customer booking portal</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Business performance dashboards</span></li>
+            <li class="excluded"><svg class="feature-cross" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#C9D2DD"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg><span>Device management and lockdown software</span></li>
+            <li class="excluded"><svg class="feature-cross" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#C9D2DD"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg><span>Driver cradle</span></li>
+            <li class="excluded"><svg class="feature-cross" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#C9D2DD"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg><span>Free installation</span></li>
+            <li class="excluded"><svg class="feature-cross" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#C9D2DD"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg><span>2 years hardware warranty</span></li>
+            <li class="excluded"><svg class="feature-cross" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#C9D2DD"/><path d="M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg><span>Rugged tablet or smartphone with 500MB data SIM</span></li>
           </ul>
-          <a href="https://calendar.google.com/appointments/schedules/AcZssZ0iLKEZ8Q7On8185ZRF0fKHek9lFf50ZASfZ-dCPpMrsO8fn53Nj4gKekNPZ34O0DSF-wN7nC9n" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%;justify-content:center;border:1px solid var(--line);">Talk to sales</a>
-          </div>
+            </div>
 
           <div class="price-card">
             <h3>JobWatch Plus</h3>
@@ -2078,14 +2080,19 @@
           <div class="price-amount">£124.94</div>
           <div class="price-period">per user, per month</div>
           <ul class="price-features">
-            <li>✓ Everything in JobWatch App</li>
-            <li>✓ Rugged Samsung tablet</li>
-            <li>✓ Data SIM (500MB)</li>
-            <li>✓ Device management software</li>
-              <li>✓ Cradle for the van plus warranty</li>
-            </ul>
-            <a href="https://calendar.google.com/appointments/schedules/AcZssZ0iLKEZ8Q7On8185ZRF0fKHek9lFf50ZASfZ-dCPpMrsO8fn53Nj4gKekNPZ34O0DSF-wN7nC9n" target="_blank" rel="noopener" class="btn btn-ghost" style="width:100%;justify-content:center;border:1px solid var(--line);">Talk to sales</a>
-          </div>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Hard wired vehicle tracking for mobile users</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Team planning, management, scheduling and tracking</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Quote and invoice creation and delivery</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Worksheet, workflow and job card management</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Online customer booking portal</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Business performance dashboards</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Device management and lockdown software</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Driver cradle</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Free installation</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>2 years hardware warranty</span></li>
+            <li><svg class="feature-tick" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#0072CE"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg><span>Rugged tablet or smartphone with 500MB data SIM</span></li>
+          </ul>
+            </div>
         </div>
       </div>
     </div>
